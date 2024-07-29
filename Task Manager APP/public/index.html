@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TM App</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <button id="toggleMode">Toggle Mode</button>
+    <hr />
+    <form id="taskForm">
+      <fieldset id="todoSet">
+        <legend>Todo:</legend>
+        <label for="todoDescription">Description:</label>
+        <input type="text" name="todoDescription" required />
+        <button type="submit">Submit</button>
+      </fieldset>
+      <fieldset id="reminderSet" style="display: none" disabled>
+        <legend>Reminder:</legend>
+        <label for="reminderDescription">Description:</label>
+        <input type="text" name="reminderDescription" required />
+        <label for="scheduleDate">Date:</label>
+        <input type="date" name="scheduleDate" required />
+        <label for="notification">Notify by:</label>
+        <select name="notification">
+          <option value="SMS">SMS</option>
+          <option value="EMAIL">EMAIL</option>
+          <option value="PUSH_NOTIFICATION">Push notification</option>
+        </select>
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+    <br />
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3" id="todoTitle">TODOS</th>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <th>Done</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="todoList"></tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4" id="reminderTitle">REMINDERS</th>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Platform</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="reminderList"></tbody>
+    </table>
+  </div>
+  <script src="./dist/index.js"></script>
+</body>
+</html>
